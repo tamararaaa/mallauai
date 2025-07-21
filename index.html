@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malla Interactiva - Ingeniería en Sistemas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      padding: 20px;
+    }
+    .cuatrimestre {
+      border: 2px solid #d62f84;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      background-color: #ffe6f0;
+    }
+    .cuatrimestre h2 {
+      color: #c2185b;
+    }
+    .materia {
+      background-color: #f9a8d4;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+      opacity: 1;
+    }
+    .materia:hover {
+      background-color: #f472b6;
+    }
+    .materia.cursada {
+      text-decoration: line-through;
+      background-color: #d1d5db;
+      color: #555;
+    }
+    .materia.deshabilitada {
+      background-color: #e5e7eb;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Interactiva - Ingeniería en Sistemas</h1>
+
+  <div class="cuatrimestre">
+    <h2>1° Año - 1° Cuatrimestre</h2>
+    <div class="materia" data-codigo="01">01 - INTRODUCCIÓN A LOS ALGORITMOS Y LA PROGRAMACIÓN</div>
+    <div class="materia" data-codigo="02">02 - ARQUITECTURA DE COMPUTADORAS I</div>
+    <div class="materia" data-codigo="03">03 - ÁLGEBRA Y GEOMETRÍA ANALÍTICA</div>
+    <div class="materia" data-codigo="04">04 - PROBLEMÁTICA DEL MUNDO ACTUAL</div>
+    <div class="materia" data-codigo="05">05 - INGLÉS I</div>
+  </div>
+
+  <div class="cuatrimestre">
+    <h2>1° Año - 2° Cuatrimestre</h2>
+    <div class="materia deshabilitada" data-codigo="06" data-requiere="02">06 - ARQUITECTURA DE COMPUTADORAS II</div>
+    <div class="materia deshabilitada" data-codigo="07" data-requiere="03">07 - CÁLCULO INFINITESIMAL I</div>
+    <div class="materia" data-codigo="08">08 - HISTORIA DE LA CIENCIA Y DE LA TÉCNICA</div>
+    <div class="materia deshabilitada" data-codigo="09" data-requiere="05">09 - INGLÉS II</div>
+    <div class="materia deshabilitada" data-codigo="10" data-requiere="01">10 - PROGRAMACIÓN Y ESTRUCTURAS DE DATOS</div>
+  </div>
+  <!-- Código HTML previo omitido por brevedad -->
+   <div class="cuatrimestre">
+  <h2>2° Año - 1° Cuatrimestre</h2>
+  <div class="materia deshabilitada" data-codigo="11" data-requiere="10">11 - PROGRAMACIÓN ORIENTADA A OBJETOS</div>
+  <div class="materia" data-codigo="12">12 - ANÁLISIS Y DISEÑO DE SISTEMAS I</div>
+  <div class="materia deshabilitada" data-codigo="13" data-requiere="07">13 - CÁLCULO INFINITESIMAL II</div>
+  <div class="materia deshabilitada" data-codigo="14" data-requiere="09">14 - INGLÉS III</div>
+  <div class="materia deshabilitada" data-codigo="15" data-requiere="06">15 - SISTEMAS OPERATIVOS</div>
+  <div class="materia" data-codigo="16">16 - ANÁLISIS DE PROCESOS ADMINISTRATIVOS</div>
+</div>
+
+<div class="cuatrimestre">
+  <h2>2° Año - 2° Cuatrimestre</h2>
+  <div class="materia deshabilitada" data-codigo="17" data-requiere="12">17 - ANÁLISIS Y DISEÑO DE SISTEMAS II</div>
+  <div class="materia deshabilitada" data-codigo="18" data-requiere="07">18 - FÍSICA I</div>
+  <div class="materia deshabilitada" data-codigo="19" data-requiere="13">19 - PROBABILIDAD Y ESTADÍSTICA</div>
+  <div class="materia deshabilitada" data-codigo="20" data-requiere="14">20 - INGLÉS IV</div>
+  <div class="materia deshabilitada" data-codigo="21" data-requiere="12">21 - INGENIERÍA DE REQUERIMIENTOS</div>
+  <div class="materia deshabilitada" data-codigo="22" data-requiere="11">22 - DESARROLLO Y ARQUITECTURA DE SOFTWARE</div>
+</div>
+
+  <div class="cuatrimestre">
+    <h2>3° Año - 1° Cuatrimestre</h2>
+    <div class="materia deshabilitada" data-codigo="23" data-requiere="17">23 - ANÁLISIS Y DISEÑO DE SISTEMAS III</div>
+    <div class="materia deshabilitada" data-codigo="24" data-requiere="12">24 - BASE DE DATOS</div>
+    <div class="materia" data-codigo="25">25 - TECNOLOGÍA DE LAS COMUNICACIONES I</div>
+    <div class="materia deshabilitada" data-codigo="26" data-requiere="18">26 - FÍSICA II</div>
+    <div class="materia deshabilitada" data-codigo="27" data-requiere="17,21,22">27 - INGENIERÍA DE SOFTWARE</div>
+  </div>
+
+  <div class="cuatrimestre">
+    <h2>3° Año - 2° Cuatrimestre</h2>
+    <div class="materia" data-codigo="28">28 - EXPERIENCIAS FORMATIVAS OBLIGATORIAS DE CARÁCTER ELECTIVO</div>
+    <div class="materia deshabilitada" data-codigo="29" data-requiere="25">29 - TECNOLOGÍA DE LAS COMUNICACIONES II</div>
+    <div class="materia" data-codigo="30">30 - MATEMÁTICA DISCRETA Y AUTÓMATAS</div>
+    <div class="materia deshabilitada" data-codigo="31" data-requiere="24">31 - BASES DE DATOS APLICADA</div>
+    <div class="materia deshabilitada" data-codigo="32" data-requiere="23,24,27">32 - TRABAJO DE DIPLOMA</div>
+  </div>
+
+  <div class="cuatrimestre">
+    <h2>4° Año - 1° Cuatrimestre</h2>
+    <div class="materia deshabilitada" data-codigo="33" data-requiere="17">33 - METODOLOGÍAS ÁGILES</div>
+    <div class="materia" data-codigo="34">34 - ORGANIZACIÓN Y GESTIÓN EMPRESARIA</div>
+    <div class="materia deshabilitada" data-codigo="35" data-requiere="24">35 - BASES DE DATOS AVANZADA</div>
+    <div class="materia deshabilitada" data-codigo="36" data-requiere="22">36 - DESARROLLO Y ARQUITECTURAS WEB</div>
+    <div class="materia" data-codigo="37">37 - EXPERIENCIAS FORMATIVAS OBLIGATORIAS DE CARÁCTER ELECTIVO</div>
+  </div>
+
+  <div class="cuatrimestre">
+    <h2>4° Año - 2° Cuatrimestre</h2>
+    <div class="materia" data-codigo="38">38 - ADMINISTRACIÓN DE PROYECTOS</div>
+    <div class="materia deshabilitada" data-codigo="39" data-requiere="34">39 - PLANIFICACIÓN ESTRATÉGICA</div>
+    <div class="materia deshabilitada" data-codigo="40" data-requiere="22">40 - INTELIGENCIA ARTIFICIAL</div>
+    <div class="materia deshabilitada" data-codigo="41" data-requiere="36">41 - METODOLOGÍAS Y DESARROLLOS WEB</div>
+    <div class="materia deshabilitada" data-codigo="42" data-requiere="26">42 - ELECTROMAGNETISMO I</div>
+  </div>
+
+  <div class="cuatrimestre">
+    <h2>5° Año - 1° Cuatrimestre</h2>
+    <div class="materia deshabilitada" data-codigo="43" data-requiere="18">43 - SISTEMA DE HARDWARE</div>
+    <div class="materia deshabilitada" data-codigo="44" data-requiere="19">44 - MODELIZACIÓN NUMÉRICA</div>
+    <div class="materia deshabilitada" data-codigo="45" data-requiere="42">45 - ELECTROMAGNETISMO II</div>
+    <div class="materia deshabilitada" data-codigo="46" data-requiere="32">46 - PRÁCTICA PROFESIONAL SUPERVISADA</div>
+    <div class="materia deshabilitada" data-codigo="47" data-requiere="38,39,41">47 - SEMINARIO DE TRABAJO FINAL DE INGENIERÍA</div>
+  </div>
+
+  <div class="cuatrimestre">
+    <h2>5° Año - 2° Cuatrimestre</h2>
+    <div class="materia deshabilitada" data-codigo="48" data-requiere="16">48 - AUDITORIA DE SISTEMAS</div>
+    <div class="materia deshabilitada" data-codigo="49" data-requiere="29">49 - REDES Y TELEPROCESAMIENTO</div>
+    <div class="materia deshabilitada" data-codigo="50" data-requiere="29,43">50 - SEGURIDAD INFORMÁTICA</div>
+    <div class="materia deshabilitada" data-codigo="51" data-requiere="47">51 - TRABAJO FINAL DE INGENIERÍA</div>
+  </div>
+
+<!-- Script final se mantiene igual -->
+
+
+  <script>
+  const materias = document.querySelectorAll('.materia');
+
+  // Recuperar progreso guardado
+  const materiasCursadas = JSON.parse(localStorage.getItem('materiasCursadas')) || [];
+
+  function actualizarEstado() {
+    const cursadas = new Set(materiasCursadas);
+
+    materias.forEach(m => {
+      const codigo = m.dataset.codigo;
+      const requiere = m.dataset.requiere;
+      if (cursadas.has(codigo)) {
+        m.classList.add('cursada');
+        m.classList.remove('deshabilitada');
+      } else if (requiere) {
+        const requiereTodos = requiere.split(',');
+        const habilitada = requiereTodos.every(req => cursadas.has(req.trim()));
+        if (habilitada) {
+          m.classList.remove('deshabilitada');
+        }
+      }
+    });
+  }
+
+  materias.forEach(materia => {
+    materia.addEventListener('click', () => {
+      if (materia.classList.contains('deshabilitada') || materia.classList.contains('cursada')) return;
+
+      const codigo = materia.dataset.codigo;
+      materia.classList.add('cursada');
+      materiasCursadas.push(codigo);
+      localStorage.setItem('materiasCursadas', JSON.stringify(materiasCursadas));
+
+      actualizarEstado();
+    });
+  });
+  actualizarEstado();
+</script>
+
+</body>
+</html>
